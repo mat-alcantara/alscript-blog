@@ -1,14 +1,15 @@
 import '../styles/antd.less';
 
-import { Button } from 'antd';
 import { AppProps } from 'next/app';
 import React from 'react';
+
+import GlobalStyle from '../styles/global';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
+      <GlobalStyle />
       <Component {...pageProps} />
-      <Button type="primary">Ok</Button>
     </>
   );
 };
