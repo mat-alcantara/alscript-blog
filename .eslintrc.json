@@ -22,8 +22,17 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "prettier", "simple-import-sort"],
   "rules": {
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "prettier/prettier": "error",
     "react/jsx-curly-newline": "off",
@@ -47,7 +56,9 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "import/prefer-default-export": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
   "settings": {
     "import/resolver": {
