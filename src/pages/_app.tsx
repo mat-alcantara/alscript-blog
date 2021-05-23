@@ -1,3 +1,5 @@
+import 'antd/dist/antd.css'; // CSS files needed to AntD
+
 import { AppProps } from 'next/app';
 import React from 'react';
 
