@@ -24,6 +24,7 @@
   },
   "plugins": ["@typescript-eslint", "react", "prettier"],
   "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "prettier/prettier": "error",
     "react/jsx-curly-newline": "off",
     "@typescript-eslint/ban-types": "off",
