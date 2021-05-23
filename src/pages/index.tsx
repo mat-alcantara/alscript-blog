@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
 
-import Header from '../components/Header';
-
 const Home: React.FC = () => {
   return (
     <>
@@ -14,15 +12,9 @@ const Home: React.FC = () => {
         />
       </Head>
 
-      <main>
-        <header>
-          <Header />
-        </header>
-      </main>
+      <main />
 
-      <footer>
-        <p>Footer</p>
-      </footer>
+      <footer />
     </>
   );
 };
