@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import React from 'react';
 
+import Header from '../components/Header';
+
 const Home: React.FC = () => {
   return (
     <>
@@ -13,7 +15,9 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <p>Main</p>
+        <header>
+          <Header />
+        </header>
       </main>
 
       <footer>
