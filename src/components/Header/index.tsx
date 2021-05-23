@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         <Col span={4}>
           <Title>
             <Image
-              src="/assets/profile.jpg"
+              src="/assets/profile.jpeg"
               alt="Foto de perfil de Mateus Alcantara"
               width={40}
               height={40}
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
               borderBottom: '2px solid transparent',
             }}
           >
-            <Menu.Item danger>
+            <Menu.Item>
               <Link href="/programming">Programação</Link>
             </Menu.Item>
             <Menu.Item>
