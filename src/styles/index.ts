@@ -11,8 +11,11 @@ export const ArticlesContainer = styled.section`
   min-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin-top: 64px;
+
+  > article + article {
+    margin-top: 64px;
+  }
 `;
 
 export const AsideContainer = styled.aside`
@@ -20,7 +23,7 @@ export const AsideContainer = styled.aside`
   flex-direction: column;
   align-items: center;
   flex: 1;
-  margin-top: 128px;
+  margin-top: 64px;
 
   h3 {
     margin-top: 8px;
@@ -28,5 +31,24 @@ export const AsideContainer = styled.aside`
 
   img {
     border-radius: 50%;
+  }
+`;
+
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  svg {
+    margin-right: 8px;
+  }
+
+  article {
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    & + article {
+      margin-left: 32px;
+    }
   }
 `;

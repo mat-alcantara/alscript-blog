@@ -1,9 +1,16 @@
+import { CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { Typography } from 'antd';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-import { ArticlesContainer, AsideContainer, Container } from '../styles/index';
+import {
+  ArticlesContainer,
+  AsideContainer,
+  Container,
+  InfoContainer,
+} from '../styles/index';
 
 const Home: React.FC = () => {
   return (
@@ -18,8 +25,87 @@ const Home: React.FC = () => {
 
       <Container>
         <ArticlesContainer>
-          <article />
-          <article />
+          <article>
+            <Typography.Title level={3}>
+              <Link href="/diferencas-nextjs">
+                As principais diferenças ao criar uma aplicação com Next.JS
+              </Link>
+            </Typography.Title>
+            <InfoContainer>
+              <Typography>
+                <CalendarOutlined />
+                33 de Mai
+              </Typography>
+              <Typography>
+                <ClockCircleOutlined />8 minutos de leitura
+              </Typography>
+            </InfoContainer>
+          </article>
+          <article>
+            <Typography.Title level={3}>
+              <Link href="/diferencas-nextjs">
+                As principais diferenças ao criar uma aplicação com Next.JS
+              </Link>
+            </Typography.Title>
+            <InfoContainer>
+              <Typography>
+                <CalendarOutlined />
+                33 de Mai
+              </Typography>
+              <Typography>
+                <ClockCircleOutlined />8 minutos de leitura
+              </Typography>
+            </InfoContainer>
+          </article>
+
+          <article>
+            <Typography.Title level={3}>
+              <Link href="/diferencas-nextjs">
+                As principais diferenças ao criar uma aplicação com Next.JS
+              </Link>
+            </Typography.Title>
+            <InfoContainer>
+              <Typography>
+                <CalendarOutlined />
+                33 de Mai
+              </Typography>
+              <Typography>
+                <ClockCircleOutlined />8 minutos de leitura
+              </Typography>
+            </InfoContainer>
+          </article>
+          <article>
+            <Typography.Title level={3}>
+              <Link href="/diferencas-nextjs">
+                As principais diferenças ao criar uma aplicação com Next.JS
+              </Link>
+            </Typography.Title>
+            <InfoContainer>
+              <Typography>
+                <CalendarOutlined />
+                33 de Mai
+              </Typography>
+              <Typography>
+                <ClockCircleOutlined />8 minutos de leitura
+              </Typography>
+            </InfoContainer>
+          </article>
+          <article>
+            <Typography.Title level={3}>
+              <Link href="/diferencas-nextjs">
+                As principais diferenças ao criar uma aplicação com Next.JS
+              </Link>
+            </Typography.Title>
+            <InfoContainer>
+              <Typography>
+                <CalendarOutlined />
+                33 de Mai
+              </Typography>
+              <Typography>
+                <ClockCircleOutlined />8 minutos de leitura
+              </Typography>
+            </InfoContainer>
+          </article>
         </ArticlesContainer>
         <AsideContainer>
           <Image
@@ -29,9 +115,10 @@ const Home: React.FC = () => {
             height={150}
           />
           <Typography.Title level={3}>Mateus Alcantara</Typography.Title>
-          <Typography>Desenvolvedor Fullstack</Typography>
-          <Typography>Praticante de Brazilian Jiu Jitsu</Typography>
-          <Typography>Leitor Assíduo</Typography>
+          <Typography>Desenvolvedor fullstack</Typography>
+          <Typography>Leitor assíduo</Typography>
+          <Typography>Praticante de brazilian jiu jitsu</Typography>
+          <Typography>Estoico</Typography>
         </AsideContainer>
       </Container>
     </>
