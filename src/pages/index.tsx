@@ -48,7 +48,7 @@ const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
           {allPostsData.map((post) => (
             <article key={post.id}>
               <Typography.Title level={3}>
-                <Link href={`/${post.id}`}>{post.title}</Link>
+                <Link href={`/posts/${post.id}`}>{post.title}</Link>
               </Typography.Title>
               <InfoContainer>
                 <Typography>
