@@ -7,6 +7,12 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'src', 'posts');
 
+export function getEstimatedReadingTime(content: string) {
+  const numberOfWords = content.split(' ');
+
+  return Math.ceil(numberOfWords.length / 150);
+}
+
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
@@ -77,16 +83,13 @@ export async function getPostData(id) {
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
+  const estimatedTime = getEstimatedReadingTime(matterResult.content);
+
   // Combine the data with the id and contentHtml
   return {
     id,
     contentHtml,
     ...matterResult.data,
+    estimatedTime,
   };
-}
-
-export function getEstimatedReadingTime(content: string) {
-  const numberOfWords = content.split(' ');
-
-  return Math.ceil(numberOfWords.length / 150);
 }

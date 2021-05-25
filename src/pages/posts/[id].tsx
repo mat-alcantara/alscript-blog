@@ -26,6 +26,7 @@ interface IPostProps {
     title: string;
     date: string;
     contentHtml: string;
+    estimatedTime: number;
   };
 }
 
@@ -78,12 +79,12 @@ const Post: React.FC<IPostProps> = ({ postData }) => {
                 }}
               >
                 <Typography>
-                  <CalendarOutlined style={{ marginRight: '4px' }} />
+                  <CalendarOutlined style={{ marginRight: '8px' }} />
                   <Date dateString={postData.date} />
                 </Typography>
-                <Typography style={{ marginLeft: '8px' }}>
-                  <ClockCircleOutlined style={{ marginRight: '4px' }} />8
-                  minutos de leitura
+                <Typography style={{ marginLeft: '16px' }}>
+                  <ClockCircleOutlined style={{ marginRight: '8px' }} />
+                  {`${postData.estimatedTime} minutos de leitura`}
                 </Typography>
               </div>
             </div>
