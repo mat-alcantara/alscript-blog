@@ -7,7 +7,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import Date from '../components/Date';
-import { getSortedPostsData } from '../lib/post';
+import { getEstimatedReadingTime, getSortedPostsData } from '../lib/post';
 import {
   ArticlesContainer,
   AsideContainer,
@@ -20,14 +20,21 @@ interface IPostProps {
   title: string;
   date: string;
   label: string;
+  estimatedTime: number;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = await getSortedPostsData();
 
+  const allPostaWithEstimatedTime = allPostsData.map((postData) => {
+    const estimatedTime = getEstimatedReadingTime(postData.content);
+
+    return { ...postData, estimatedTime };
+  });
+
   return {
     props: {
-      allPostsData,
+      allPostsData: allPostaWithEstimatedTime,
     },
   };
 };
@@ -56,7 +63,8 @@ const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
                   <Date dateString={post.date} />
                 </Typography>
                 <Typography>
-                  <ClockCircleOutlined />8 minutos de leitura
+                  <ClockCircleOutlined />
+                  {post.estimatedTime} minutos de leitura
                 </Typography>
               </InfoContainer>
             </article>

@@ -18,7 +18,7 @@ const Header: React.FC = () => {
               height={40}
             />
             <Typography style={{ fontWeight: 'bold', fontSize: 18 }}>
-              <Link href="/">Mateus Alcantara</Link>
+              <Link href="/">Alscript</Link>
             </Typography>
           </Title>
         </Col>

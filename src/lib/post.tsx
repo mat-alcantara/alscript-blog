@@ -25,6 +25,7 @@ export function getSortedPostsData() {
     return {
       id,
       ...matterResult.data,
+      content: matterResult.content,
     };
   });
   // Sort posts by date
@@ -82,4 +83,10 @@ export async function getPostData(id) {
     contentHtml,
     ...matterResult.data,
   };
+}
+
+export function getEstimatedReadingTime(content: string) {
+  const numberOfWords = content.split(' ');
+
+  return Math.ceil(numberOfWords.length / 150);
 }
