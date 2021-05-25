@@ -12,6 +12,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyle />
+
       <Container>
         <Header />
         <Component {...pageProps} />

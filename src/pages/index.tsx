@@ -1,10 +1,13 @@
 import { CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { Typography } from 'antd';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import Date from '../components/Date';
+import { getSortedPostsData } from '../lib/post';
 import {
   ArticlesContainer,
   AsideContainer,
@@ -12,7 +15,24 @@ import {
   InfoContainer,
 } from '../styles/index';
 
-const Home: React.FC = () => {
+interface IPostProps {
+  id: string;
+  title: string;
+  date: string;
+  label: string;
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = await getSortedPostsData();
+
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};
+
+const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
   return (
     <>
       <Head>
@@ -25,87 +45,22 @@ const Home: React.FC = () => {
 
       <Container>
         <ArticlesContainer>
-          <article>
-            <Typography.Title level={3}>
-              <Link href="/diferencas-nextjs">
-                As principais diferenças ao criar uma aplicação com Next.JS
-              </Link>
-            </Typography.Title>
-            <InfoContainer>
-              <Typography>
-                <CalendarOutlined />
-                33 de Mai
-              </Typography>
-              <Typography>
-                <ClockCircleOutlined />8 minutos de leitura
-              </Typography>
-            </InfoContainer>
-          </article>
-          <article>
-            <Typography.Title level={3}>
-              <Link href="/diferencas-nextjs">
-                As principais diferenças ao criar uma aplicação com Next.JS
-              </Link>
-            </Typography.Title>
-            <InfoContainer>
-              <Typography>
-                <CalendarOutlined />
-                33 de Mai
-              </Typography>
-              <Typography>
-                <ClockCircleOutlined />8 minutos de leitura
-              </Typography>
-            </InfoContainer>
-          </article>
-
-          <article>
-            <Typography.Title level={3}>
-              <Link href="/diferencas-nextjs">
-                As principais diferenças ao criar uma aplicação com Next.JS
-              </Link>
-            </Typography.Title>
-            <InfoContainer>
-              <Typography>
-                <CalendarOutlined />
-                33 de Mai
-              </Typography>
-              <Typography>
-                <ClockCircleOutlined />8 minutos de leitura
-              </Typography>
-            </InfoContainer>
-          </article>
-          <article>
-            <Typography.Title level={3}>
-              <Link href="/diferencas-nextjs">
-                As principais diferenças ao criar uma aplicação com Next.JS
-              </Link>
-            </Typography.Title>
-            <InfoContainer>
-              <Typography>
-                <CalendarOutlined />
-                33 de Mai
-              </Typography>
-              <Typography>
-                <ClockCircleOutlined />8 minutos de leitura
-              </Typography>
-            </InfoContainer>
-          </article>
-          <article>
-            <Typography.Title level={3}>
-              <Link href="/diferencas-nextjs">
-                As principais diferenças ao criar uma aplicação com Next.JS
-              </Link>
-            </Typography.Title>
-            <InfoContainer>
-              <Typography>
-                <CalendarOutlined />
-                33 de Mai
-              </Typography>
-              <Typography>
-                <ClockCircleOutlined />8 minutos de leitura
-              </Typography>
-            </InfoContainer>
-          </article>
+          {allPostsData.map((post) => (
+            <article key={post.id}>
+              <Typography.Title level={3}>
+                <Link href={`/${post.id}`}>{post.title}</Link>
+              </Typography.Title>
+              <InfoContainer>
+                <Typography>
+                  <CalendarOutlined />
+                  <Date dateString={post.date} />
+                </Typography>
+                <Typography>
+                  <ClockCircleOutlined />8 minutos de leitura
+                </Typography>
+              </InfoContainer>
+            </article>
+          ))}
         </ArticlesContainer>
         <AsideContainer>
           <Image
