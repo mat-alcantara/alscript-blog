@@ -5,6 +5,7 @@ Alscript blog is a blog created by me to share knowledges about programming, rea
 # Build With
 
 - Next.js
+- Typescript
 - Gray matter
 - Ant Design
 - Styled Components
