@@ -80,7 +80,6 @@ const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
           <Typography.Title level={3}>Mateus Alcantara</Typography.Title>
           <Typography>Desenvolvedor fullstack</Typography>
           <Typography>Leitor assíduo</Typography>
-          <Typography>Praticante de brazilian jiu jitsu</Typography>
           <Typography>Estoico</Typography>
         </AsideContainer>
       </Container>

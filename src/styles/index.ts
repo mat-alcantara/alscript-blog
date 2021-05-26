@@ -8,7 +8,7 @@ export const Container = styled.main`
 `;
 
 export const ArticlesContainer = styled.section`
-  min-width: 800px;
+  min-width: 740px;
   display: flex;
   flex-direction: column;
   margin-top: 64px;

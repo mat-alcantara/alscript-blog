@@ -34,9 +34,6 @@ const Header: React.FC = () => {
               <Link href="/programming">Programação</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/bjj">Jiu Jitsu</Link>
-            </Menu.Item>
-            <Menu.Item>
               <Link href="/books">Literatura</Link>
             </Menu.Item>
             <Menu.Item>
