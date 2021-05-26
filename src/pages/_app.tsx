@@ -1,4 +1,4 @@
-import '../styles/antd.less';
+import 'antd/dist/antd.css';
 
 import { AppProps } from 'next/app';
 import React from 'react';
