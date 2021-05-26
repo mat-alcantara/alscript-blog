@@ -13,7 +13,7 @@ export function getEstimatedReadingTime(content: string) {
   return Math.ceil(numberOfWords.length / 150);
 }
 
-export function getSortedPostsData() {
+export function getSortedPostsData({ filter }) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -34,8 +34,20 @@ export function getSortedPostsData() {
       content: matterResult.content,
     };
   });
+
+  // Filter posts
+  const filteredPostsData = allPostsData.filter((result) => {
+    if (filter === '/') {
+      return result;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return result.label === filter;
+  });
+
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return filteredPostsData.sort((a, b) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     if (a.date < b.date) {
@@ -65,6 +77,51 @@ export function getAllPostIds() {
     return {
       params: {
         id: fileName.replace(/\.md$/, ''),
+      },
+    };
+  });
+}
+
+export function getAllPostsLabels() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allPostsData = fileNames.map((fileName) => {
+    // Remove ".md" from file name to get id
+    const id = fileName.replace(/\.md$/, '');
+
+    // Read markdown file as string
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+
+    // Combine the data with the id
+    return {
+      id,
+      ...matterResult.data,
+      content: matterResult.content,
+    };
+  });
+
+  // Returns an array that looks like this:
+  // [
+  //   {
+  //     params: {
+  //       id: 'ssg-ssr'
+  //     }
+  //   },
+  //   {
+  //     params: {
+  //       id: 'pre-rendering'
+  //     }
+  //   }
+  // ]
+  return allPostsData.map((postData) => {
+    return {
+      params: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        label: postData.label,
       },
     };
   });

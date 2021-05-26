@@ -1,13 +1,17 @@
 import { CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { Typography } from 'antd';
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 import Date from '../components/Date';
-import { getEstimatedReadingTime, getSortedPostsData } from '../lib/post';
+import {
+  getAllPostsLabels,
+  getEstimatedReadingTime,
+  getSortedPostsData,
+} from '../lib/post';
 import {
   ArticlesContainer,
   AsideContainer,
@@ -23,8 +27,16 @@ interface IPostProps {
   estimatedTime: number;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = await getSortedPostsData({ filter: '/' });
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getAllPostsLabels();
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const allPostsData = getSortedPostsData({ filter: params.label });
 
   const allPostaWithEstimatedTime = allPostsData.map((postData) => {
     const estimatedTime = getEstimatedReadingTime(postData.content);
@@ -39,16 +51,16 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
+const FilteredPosts: React.FC<{ allPostsData: IPostProps[] }> = ({
+  allPostsData,
+}) => {
   return (
     <>
       <Head>
-        <title>
-          Alscript - Um blog sobre programação, leitura e estoicismo
-        </title>
+        <title>Mateus Alcantara</title>
         <meta
           name="description"
-          content="Blog pessoal criado para compartilhar conhecimentos sobre programação, leitura e estoicismo"
+          content="Blog pessoal criado para compartilhar conhecimentos sobre programação, jiu jitsu, leitura e estoicismo"
         />
       </Head>
 
@@ -89,4 +101,4 @@ const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
   );
 };
 
-export default Home;
+export default FilteredPosts;

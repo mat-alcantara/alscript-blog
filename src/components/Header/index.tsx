@@ -31,16 +31,16 @@ const Header: React.FC = () => {
             }}
           >
             <Menu.Item>
-              <Link href="/programming">Programação</Link>
+              <Link href="/programacao">Programação</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/books">Literatura</Link>
+              <Link href="/literatura">Literatura</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/stoicism">Estoicismo</Link>
+              <Link href="/estoicismo">Estoicismo</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/about">Sobre mim</Link>
+              <Link href="/sobre">Sobre mim</Link>
             </Menu.Item>
           </Menu>
         </Col>
