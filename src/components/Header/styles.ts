@@ -22,6 +22,10 @@ export const Title = styled.div`
   align-items: center;
   justify-content: left;
 
+  a {
+    color: #0f3c4c;
+  }
+
   img {
     border-radius: 50%;
   }

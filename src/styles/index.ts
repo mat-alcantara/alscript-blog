@@ -16,6 +16,10 @@ export const ArticlesContainer = styled.section`
   > article + article {
     margin-top: 64px;
   }
+
+  a {
+    color: #0f3c4c;
+  }
 `;
 
 export const AsideContainer = styled.aside`
