@@ -29,6 +29,11 @@ export const Article = styled.article`
     font-size: 21px;
     line-height: 32px;
   }
+
+  hr {
+    margin-top: 16px - 1em;
+    margin-bottom: 16px;
+  }
 `;
 
 export const UserInfo = styled.div`
