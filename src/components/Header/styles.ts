@@ -2,10 +2,11 @@ import { Row } from 'antd';
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  width: 100vm;
-  padding-top: 32px;
+  width: 100%;
+  padding-top: 16px;
+  height: 100%;
 
-  /* box-shadow: 0 2px 8px #f0f1f2; */
+  box-shadow: 0 2px 8px #f0f1f2;
 `;
 
 export const GridContainer = styled(Row)`
@@ -28,9 +29,11 @@ export const Title = styled.div`
 
   img {
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
   }
 
   article {
-    margin-left: 16px;
+    /* margin-left: 16px; */
   }
 `;

@@ -1,17 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
-  flex: 1;
-  width: 100vm;
-  display: flex;
-  flex-direction: row;
-`;
-
-export const ArticlesContainer = styled.section`
-  min-width: 740px;
+export const ArticlesContainer = styled.main`
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
+  margin-top: 32px;
 
   > article + article {
     margin-top: 64px;
@@ -19,22 +11,6 @@ export const ArticlesContainer = styled.section`
 
   a {
     color: #0f3c4c;
-  }
-`;
-
-export const AsideContainer = styled.aside`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  margin-top: 64px;
-
-  h3 {
-    margin-top: 8px;
-  }
-
-  img {
-    border-radius: 50%;
   }
 `;
 

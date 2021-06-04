@@ -1,32 +1,35 @@
-import { Col, Menu, Typography } from 'antd';
-import Image from 'next/image';
+import { Col, Divider, Grid, Menu, Typography } from 'antd';
 import Link from 'next/link';
 import React from 'react';
 
 import { Container, GridContainer, Title } from './styles';
 
 const Header: React.FC = () => {
+  const breakpoints = Grid.useBreakpoint();
+
   return (
-    <Container>
-      <GridContainer>
-        <Col span={4}>
+    <Container style={{ marginTop: breakpoints.md ? '16px' : '8px' }}>
+      <GridContainer align="middle" justify="center">
+        <Col lg={6} sm={24}>
           <Title>
-            <Image
-              src="/assets/profile.jpeg"
-              alt="Foto de perfil de Mateus Alcantara"
-              width={40}
-              height={40}
-            />
-            <Typography style={{ fontWeight: 'bold', fontSize: 18 }}>
-              <Link href="/">Alscript</Link>
-            </Typography>
+            <Typography.Title
+              level={3}
+              style={{
+                textAlign: breakpoints.sm ? 'left' : 'center',
+              }}
+            >
+              <Link href="/">MatScript</Link>
+            </Typography.Title>
           </Title>
         </Col>
-        <Col span={20}>
+        <Col md={24} sm={24}>
+          <Divider />
+        </Col>
+        <Col lg={18} sm={24}>
           <Menu
             mode="horizontal"
             style={{
-              textAlign: 'right',
+              textAlign: breakpoints.sm ? 'right' : 'center',
               borderBottom: '2px solid transparent',
             }}
           >

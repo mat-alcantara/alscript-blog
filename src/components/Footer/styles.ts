@@ -6,6 +6,7 @@ export const Container = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 
   section {
   }
