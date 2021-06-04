@@ -1,16 +1,19 @@
-import { Col, Divider, Grid, Menu, Typography } from 'antd';
+import { Col, Grid, Menu, Typography } from 'antd';
 import Link from 'next/link';
 import React from 'react';
 
-import { Container, GridContainer, Title } from './styles';
+import { Container, GridContainer, NavMenu, Title } from './styles';
 
 const Header: React.FC = () => {
   const breakpoints = Grid.useBreakpoint();
 
   return (
     <Container style={{ marginTop: breakpoints.md ? '16px' : '8px' }}>
-      <GridContainer align="middle" justify="center">
-        <Col lg={6} sm={24}>
+      <GridContainer
+        align="middle"
+        justify={breakpoints.sm ? 'space-between' : 'center'}
+      >
+        <Col lg={5} sm={24}>
           <Title>
             <Typography.Title
               level={3}
@@ -22,15 +25,14 @@ const Header: React.FC = () => {
             </Typography.Title>
           </Title>
         </Col>
-        <Col md={24} sm={24}>
-          <Divider />
-        </Col>
-        <Col lg={18} sm={24}>
-          <Menu
+
+        <Col lg={19} sm={24}>
+          <NavMenu
             mode="horizontal"
             style={{
               textAlign: breakpoints.sm ? 'right' : 'center',
-              borderBottom: '2px solid transparent',
+              borderBottom: breakpoints.sm ? '2px solid transparent' : '',
+              fontSize: breakpoints.sm ? '' : '12px',
             }}
           >
             <Menu.Item>
@@ -45,7 +47,7 @@ const Header: React.FC = () => {
             <Menu.Item>
               <Link href="/sobre">Sobre mim</Link>
             </Menu.Item>
-          </Menu>
+          </NavMenu>
         </Col>
       </GridContainer>
     </Container>

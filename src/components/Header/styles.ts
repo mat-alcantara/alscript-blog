@@ -1,20 +1,26 @@
-import { Row } from 'antd';
+import { Menu, Row } from 'antd';
 import styled from 'styled-components';
 
 export const Container = styled.header`
   width: 100%;
   padding-top: 16px;
   height: 100%;
-
-  box-shadow: 0 2px 8px #f0f1f2;
 `;
 
 export const GridContainer = styled(Row)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+
+  div {
+    ul {
+      li {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -23,17 +29,17 @@ export const Title = styled.div`
   align-items: center;
   justify-content: left;
 
+  h3 {
+    margin-bottom: 0px;
+  }
+
   a {
     color: #0f3c4c;
   }
+`;
 
-  img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-
-  article {
-    /* margin-left: 16px; */
+export const NavMenu = styled(Menu)`
+  li {
+    margin: 0px 10px !important;
   }
 `;

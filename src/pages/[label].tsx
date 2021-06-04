@@ -12,12 +12,7 @@ import {
   getEstimatedReadingTime,
   getSortedPostsData,
 } from '../lib/post';
-import {
-  ArticlesContainer,
-  AsideContainer,
-  Container,
-  InfoContainer,
-} from '../styles/index';
+import { ArticlesContainer, InfoContainer } from '../styles/index';
 
 interface IPostProps {
   id: string;
@@ -64,39 +59,25 @@ const FilteredPosts: React.FC<{ allPostsData: IPostProps[] }> = ({
         />
       </Head>
 
-      <Container>
-        <ArticlesContainer>
-          {allPostsData.map((post) => (
-            <article key={post.id}>
-              <Typography.Title level={3}>
-                <Link href={`/posts/${post.id}`}>{post.title}</Link>
-              </Typography.Title>
-              <InfoContainer>
-                <Typography>
-                  <CalendarOutlined />
-                  <Date dateString={post.date} />
-                </Typography>
-                <Typography>
-                  <ClockCircleOutlined />
-                  {post.estimatedTime} minutos de leitura
-                </Typography>
-              </InfoContainer>
-            </article>
-          ))}
-        </ArticlesContainer>
-        <AsideContainer>
-          <Image
-            src="/assets/profile.jpeg"
-            alt="Foto de perfil"
-            width={150}
-            height={150}
-          />
-          <Typography.Title level={3}>Mateus Alcantara</Typography.Title>
-          <Typography>Desenvolvedor fullstack</Typography>
-          <Typography>Leitor assíduo</Typography>
-          <Typography>Estoico</Typography>
-        </AsideContainer>
-      </Container>
+      <ArticlesContainer>
+        {allPostsData.map((post) => (
+          <article key={post.id}>
+            <Typography.Title level={3}>
+              <Link href={`/posts/${post.id}`}>{post.title}</Link>
+            </Typography.Title>
+            <InfoContainer>
+              <Typography>
+                <CalendarOutlined />
+                <Date dateString={post.date} />
+              </Typography>
+              <Typography>
+                <ClockCircleOutlined />
+                {post.estimatedTime} minutos de leitura
+              </Typography>
+            </InfoContainer>
+          </article>
+        ))}
+      </ArticlesContainer>
     </>
   );
 };
