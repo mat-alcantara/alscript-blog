@@ -60,7 +60,7 @@ const FilteredPosts: React.FC<{ allPostsData: IPostProps[] }> = ({
         />
       </Head>
 
-      <ArticlesContainer>
+      <ArticlesContainer breakpoints={breakpoints}>
         {allPostsData.map((post) => (
           <article key={post.id}>
             <Typography.Title level={breakpoints.sm ? 3 : 4}>

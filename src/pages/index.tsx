@@ -48,7 +48,7 @@ const Home: React.FC<{ allPostsData: IPostProps[] }> = ({ allPostsData }) => {
         />
       </Head>
 
-      <ArticlesContainer>
+      <ArticlesContainer breakpoints={breakpoints}>
         {allPostsData.map((post) => (
           <article key={post.id}>
             <Typography.Title level={breakpoints.sm ? 3 : 4}>

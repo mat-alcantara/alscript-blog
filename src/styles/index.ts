@@ -1,12 +1,33 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ArticlesContainer = styled.main`
+import IBreakpoints from '../types/IBreakpoints';
+
+interface IArticlesContainerProps {
+  breakpoints: IBreakpoints;
+}
+
+export const ArticlesContainer = styled.main<IArticlesContainerProps>`
   display: flex;
   flex-direction: column;
   margin-top: 32px;
 
+  ${(props) =>
+    props.breakpoints.sm
+      ? css``
+      : css`
+          padding-left: 16px;
+          padding-right: 16px;
+        `}
+
   > article + article {
-    margin-top: 64px;
+    ${(props) =>
+      props.breakpoints.sm
+        ? css`
+            margin-top: 64px;
+          `
+        : css`
+            margin-top: 32px;
+          `}
   }
 
   a {
