@@ -5,7 +5,7 @@ import {
   InstagramFilled,
   LinkedinFilled,
 } from '@ant-design/icons';
-import { Divider, Typography } from 'antd';
+import { Divider, Grid, Typography } from 'antd';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -48,20 +48,26 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const Post: React.FC<IPostProps> = ({ postData }) => {
+  const breakpoints = Grid.useBreakpoint();
+
   return (
     <>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <Divider />
-      <Container>
-        <UserInfo>
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Container breakpoints={breakpoints}>
+        <UserInfo breakpoints={breakpoints}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+            }}
+          >
             <Image
               src="/assets/profile.jpeg"
               alt="Foto de perfil"
-              width={60}
-              height={60}
+              width={breakpoints.sm ? 60 : 45}
+              height={breakpoints.sm ? 60 : 45}
             />
             <div
               style={{
@@ -75,24 +81,33 @@ const Post: React.FC<IPostProps> = ({ postData }) => {
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  fontSize: '14px',
+                  fontSize: breakpoints.sm ? '14px' : '10px',
                 }}
               >
                 <Typography>
-                  <CalendarOutlined style={{ marginRight: '8px' }} />
+                  <CalendarOutlined
+                    style={{ marginRight: breakpoints.sm ? '8px' : '2px' }}
+                  />
                   <Date dateString={postData.date} />
                 </Typography>
-                <Typography style={{ marginLeft: '16px' }}>
-                  <ClockCircleOutlined style={{ marginRight: '8px' }} />
+                <Typography
+                  style={{ marginLeft: breakpoints.sm ? '16px' : '8px' }}
+                >
+                  <ClockCircleOutlined
+                    style={{ marginRight: breakpoints.sm ? '8px' : '2px' }}
+                  />
                   {`${postData.estimatedTime} minutos de leitura`}
                 </Typography>
               </div>
             </div>
           </div>
 
-          <SocialNetworkContainer>
+          <SocialNetworkContainer breakpoints={breakpoints}>
             <Link href="https://www.github.com/mat-alcantara">
-              <GithubFilled width={100} height={50} />
+              <GithubFilled
+                width={breakpoints.sm ? 100 : 50}
+                height={breakpoints.sm ? 50 : 25}
+              />
             </Link>
             <Link href="https://www.linkedin.com/in/mat-alcantara/">
               <LinkedinFilled />
@@ -102,7 +117,10 @@ const Post: React.FC<IPostProps> = ({ postData }) => {
             </Link>
           </SocialNetworkContainer>
         </UserInfo>
-        <Article dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Article
+          breakpoints={breakpoints}
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        />
       </Container>
       <Divider />
     </>
