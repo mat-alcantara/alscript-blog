@@ -1,8 +1,7 @@
 import { CalendarOutlined, ClockCircleOutlined } from '@ant-design/icons';
-import { Typography } from 'antd';
+import { Grid, Typography } from 'antd';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -49,6 +48,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const FilteredPosts: React.FC<{ allPostsData: IPostProps[] }> = ({
   allPostsData,
 }) => {
+  const breakpoints = Grid.useBreakpoint();
+
   return (
     <>
       <Head>
@@ -62,7 +63,7 @@ const FilteredPosts: React.FC<{ allPostsData: IPostProps[] }> = ({
       <ArticlesContainer>
         {allPostsData.map((post) => (
           <article key={post.id}>
-            <Typography.Title level={3}>
+            <Typography.Title level={breakpoints.sm ? 3 : 4}>
               <Link href={`/posts/${post.id}`}>{post.title}</Link>
             </Typography.Title>
             <InfoContainer>
