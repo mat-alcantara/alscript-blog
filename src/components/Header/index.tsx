@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               <Link href="/estoicismo">Estoicismo</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/sobre">Sobre mim</Link>
+              <Link href="/about">Sobre</Link>
             </Menu.Item>
           </NavMenu>
         </Col>
