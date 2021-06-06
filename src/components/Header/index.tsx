@@ -32,7 +32,8 @@ const Header: React.FC = () => {
             style={{
               textAlign: breakpoints.sm ? 'right' : 'center',
               borderBottom: breakpoints.sm ? '2px solid transparent' : '',
-              fontSize: breakpoints.sm ? '' : '12px',
+              fontSize: breakpoints.sm ? '' : '10px',
+              display: breakpoints.sm ? '' : '',
             }}
           >
             <Menu.Item>
