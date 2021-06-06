@@ -14,6 +14,8 @@ Durante a minha vida eu tentei muitas estratégias diferentes para acordar de ma
 
 Elas são vendidas em 200mg ou 420mg, e 200mg já são mais do que suficientes para que você acorde. Considerando que é saudavel ingerir até 400mg de cafeína por dia, você acaba ingerindo uma quantidade não prejudicial ao seu corpo. Além disso, caso o seu organismo seja sensivel a cafeína, você pode ingerir tambem L-Teanina, que anula o efeito de ansiedade da cafeína.
 
-Uma estratégia ainda mais infalível que tenho utilizado é acordar 15 minutos antes do meu horário de despertar para tomar a pílula de cafeína. Isso faz com que eu acorde as 5AM sem sono algum.
+Uma estratégia ainda mais infalível que tenho utilizado é acordar 15 minutos antes do meu horário de despertar para tomar a pílula de cafeína. Isso faz com que eu acorde as 5AM sem sono algum. Para facilitar esse processo, o ideal é que a pílula de cafeína já esteja ao lado da cama com um copo de agua cheio, pra que não tenha desculpas pra não tomar logo pela manhã.
 
-Além disso, leia "O milagre da manhã". Esse é um dos melhores livros sobre o assunto.
+Além disso, a leitura do livro "O milagre da manhã" é essencial. O livro possui ótimas sacadas que ajudam nessa tarefa que pra mim é uma das mais difíceis de todas.
+
+E é claro, o mais importante: Tenha uma motivação. Se for preciso, eu acordo às 4 horas da manhã, desde que isso signifique que eu vá ter tempo para programar. Ter um objetivo, uma motivação, faz com que tudo isso tenha um sentido, e quando faz sentido pra você, fica muito mais fácil.

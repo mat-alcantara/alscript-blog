@@ -1,3 +1,4 @@
+import { shade } from 'polished';
 import styled, { css } from 'styled-components';
 
 import IBreakpoints from '../types/IBreakpoints';
@@ -32,6 +33,11 @@ export const ArticlesContainer = styled.main<IArticlesContainerProps>`
 
   a {
     color: #0f3c4c;
+    transition: color 0.2s;
+
+    &:hover {
+      color: ${shade(0.2, '#0f3c4c')};
+    }
   }
 `;
 

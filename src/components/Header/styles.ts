@@ -1,4 +1,5 @@
 import { Menu, Row } from 'antd';
+import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.header`
@@ -35,6 +36,12 @@ export const Title = styled.div`
 
   a {
     color: #0f3c4c;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: ${shade(0.2, '#0f3c4c')};
+    }
   }
 `;
 
