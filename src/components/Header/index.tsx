@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                 textAlign: breakpoints.sm ? 'left' : 'center',
               }}
             >
-              <Link href="/">MatScript</Link>
+              <Link href="/">matscript</Link>
             </Typography.Title>
           </Title>
         </Col>
