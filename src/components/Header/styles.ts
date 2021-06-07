@@ -9,11 +9,6 @@ export const Container = styled.header`
 `;
 
 export const GridContainer = styled(Row)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-
   div {
     ul {
       li {
@@ -25,10 +20,7 @@ export const GridContainer = styled(Row)`
 `;
 
 export const Title = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
+  width: 100%;
 
   h3 {
     margin-bottom: 0px;

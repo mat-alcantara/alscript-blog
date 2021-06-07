@@ -1,3 +1,4 @@
+import { MenuOutlined } from '@ant-design/icons';
 import { Col, Grid, Menu, Typography } from 'antd';
 import Link from 'next/link';
 import React from 'react';
@@ -9,11 +10,8 @@ const Header: React.FC = () => {
 
   return (
     <Container style={{ marginTop: breakpoints.md ? '16px' : '8px' }}>
-      <GridContainer
-        align="middle"
-        justify={breakpoints.sm ? 'space-between' : 'center'}
-      >
-        <Col lg={5} sm={24}>
+      <GridContainer align="middle" justify="space-between">
+        <Col xs={20} sm={20} md={5} lg={5} xl={5} xxl={5}>
           <Title>
             <Typography.Title
               level={3}
@@ -26,14 +24,16 @@ const Header: React.FC = () => {
           </Title>
         </Col>
 
-        <Col lg={19} sm={24}>
+        <Col xs={4} sm={4} md={19} lg={19} xl={19} xxl={19}>
           <NavMenu
             mode="horizontal"
+            overflowedIndicator={<MenuOutlined />}
+            triggerSubMenuAction={breakpoints.sm ? 'hover' : 'click'}
             style={{
               textAlign: breakpoints.sm ? 'right' : 'center',
               borderBottom: breakpoints.sm ? '2px solid transparent' : '',
-              fontSize: breakpoints.sm ? '' : '10px',
-              display: breakpoints.sm ? '' : '',
+              width: breakpoints.sm ? '' : '10px',
+              marginRight: breakpoints.sm ? '' : '32px',
             }}
           >
             <Menu.Item>
