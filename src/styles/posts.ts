@@ -8,6 +8,7 @@ interface IBreakpointsProps {
 
 export const Container = styled.main<IBreakpointsProps>`
   max-width: 750px;
+  width: 100%;
   padding: 0px 32px;
   margin: 0 auto;
   ${(props) =>
@@ -21,6 +22,15 @@ export const Container = styled.main<IBreakpointsProps>`
 `;
 
 export const Article = styled.article<IBreakpointsProps>`
+  pre {
+    background: #021627;
+    padding: 16px;
+
+    code {
+      color: #fff;
+    }
+  }
+
   ${(props) =>
     props.breakpoints.sm
       ? css`
@@ -66,6 +76,9 @@ export const Article = styled.article<IBreakpointsProps>`
             margin-top: 16px - 1em;
             margin-bottom: 16px;
           }
+          code {
+            font-size: 10px;
+          }
         `}
   display: flex;
   flex-direction: column;
@@ -96,15 +109,20 @@ export const SocialNetworkContainer = styled.div<IBreakpointsProps>`
         props.breakpoints.sm
           ? css`
               margin-left: 16px;
+
+              svg {
+                width: 25px;
+                height: 25px;
+              }
             `
           : css`
               margin-left: 8px;
-            `}
-    }
 
-    svg {
-      width: 25px;
-      height: 25px;
+              svg {
+                width: 15px;
+                height: 15px;
+              }
+            `}
     }
   }
 `;
