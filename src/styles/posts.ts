@@ -31,6 +31,14 @@ export const Article = styled.article<IBreakpointsProps>`
     }
   }
 
+  img {
+    max-width: 750px; /* you can use % */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+
   ${(props) =>
     props.breakpoints.sm
       ? css`
@@ -53,6 +61,13 @@ export const Article = styled.article<IBreakpointsProps>`
           hr {
             margin-top: 16px - 1em;
             margin-bottom: 16px;
+          }
+          li {
+            font: 'Roboto';
+            font-weight: 300;
+            font-size: 21px;
+            list-style: circle;
+            padding-left: 32px;
           }
         `
       : css`
@@ -79,6 +94,13 @@ export const Article = styled.article<IBreakpointsProps>`
           code {
             font-size: 10px;
           }
+          li {
+            font: 'Roboto';
+            font-weight: 300;
+            font-size: 16px;
+            list-style: circle;
+            margin-left: 16px;
+          }
         `}
   display: flex;
   flex-direction: column;
@@ -103,6 +125,19 @@ export const UserInfo = styled.div<IBreakpointsProps>`
 export const SocialNetworkContainer = styled.div<IBreakpointsProps>`
   span {
     color: #595959;
+
+    svg {
+      ${(props) =>
+        props.breakpoints.sm
+          ? css`
+              width: 25px;
+              height: 25px;
+            `
+          : css`
+              width: 15px;
+              height: 15px;
+            `}
+    }
 
     & + span {
       ${(props) =>
