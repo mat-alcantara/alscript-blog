@@ -1,5 +1,9 @@
 # Alscript Blog
 
+![Alscript Preview 1](./preview1.png)
+
+![Alscript Preview 2](./preview2.png)
+
 Alscript blog is a blog created by me to share knowledges about programming, reading and stoicism.
 
 # Build With
